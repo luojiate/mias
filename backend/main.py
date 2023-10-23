@@ -197,7 +197,7 @@ def process_image(image_path):
     # 掃描
     row_min, row_max, col_min, col_max = Scan_row_col(pred_full)
     length = round((row_max - row_min) * cm_per_p, 2)
-    width = round((col_max - col_min) * cm_per_p, 1)
+    width = round((col_max - col_min) * cm_per_p, 2)
     outer_fat_area = round(np.sum(pred_outer != 0) * area_per_p, 3)
     inner_fat_area = round(np.sum(pred_inner != 0) * area_per_p, 3)
     # 顯示結果

@@ -20,7 +20,7 @@ const PersonalAnalysis = () => {
     return axios({ method, url, ...options })
       .then(response => {
         if (response.status === 401) {
-          navigate('/');
+          navigate('/personal');
           throw new Error("未經授權的請求");
         }
         return response;
@@ -78,10 +78,11 @@ const PersonalAnalysis = () => {
                       <h1 className="text-xs">Number: {analysis.number}</h1>
                     </header>
                     <footer className="flex flex-col leading-none p-1">
-                      <p className="text-xs">長度: {analysis.length}cm</p>
-                      <p className="text-xs">寬度: {analysis.width}cm</p>
-                      <p className="text-xs">內部: {analysis.inner_fat}cm<sup>2</sup></p>
-                      <p className="text-xs">外部: {analysis.outer_fat}cm<sup>2</sup></p>
+                      <p className="text-xs">y軸高度 : {analysis.length}cm</p>
+                      <p className="text-xs">x軸寬度: {analysis.width}cm</p>
+                      <p className="text-xs">腰圍: {(3.14 * analysis.length) + 2 * (analysis.width - analysis.length)}</p>
+                      <p className="text-xs">內脂肪: {analysis.inner_fat}cm<sup>2</sup></p>
+                      <p className="text-xs">外脂肪: {analysis.outer_fat}cm<sup>2</sup></p>
                       <p className="text-xs">附註: {analysis.description}</p>
                       <div className="flex justify-center space-x-2">
                         <div>
