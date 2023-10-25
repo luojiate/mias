@@ -79,8 +79,8 @@ const PersonalAnalysis = () => {
                     </header>
                     <footer className="flex flex-col leading-none p-1">
                       <p className="text-xs">y軸高度 : {analysis.length}cm</p>
-                      <p className="text-xs">x軸寬度: {analysis.width}cm</p>
-                      <p className="text-xs">腰圍: {(3.14 * analysis.length) + 2 * (analysis.width - analysis.length)}</p>
+                      <p className="text-xs">x軸寬度: {analysis.width}cm</p> 
+                      <p className="text-xs">腰圍: {(3.14 * analysis.length) + 2 * (analysis.width - analysis.length).toFixed(3)}cm</p> {/* 顯示到小數點第3位 */}
                       <p className="text-xs">內脂肪: {analysis.inner_fat}cm<sup>2</sup></p>
                       <p className="text-xs">外脂肪: {analysis.outer_fat}cm<sup>2</sup></p>
                       <p className="text-xs">附註: {analysis.description}</p>

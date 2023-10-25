@@ -36,7 +36,7 @@ const CreateAnalysis = () => {
     axiosWithRedirect('post', `${process.env.REACT_APP_BACKEND_URL}/create`, body, { withCredentials: true })
       .then(function (response) {
         setLoading(false);
-        navigate("/");
+        navigate("/personal");
       })
       .catch(function (error) {
         setLoading(false);

@@ -1,8 +1,12 @@
 import sys
 import json
 import os
+# GPU 設置: CPU(-1) or GPU(0)
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 import cv2 as cv
 import numpy as np
+import tensorflow as tf
+# tf.debugging.set_log_device_placement(True)
 from tensorflow.keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D, concatenate
 from tensorflow.keras.models import Model
 
